@@ -57,12 +57,14 @@ __rc_prompt_svn() {
     printf ' [svn: %s]' "${BRANCH:-unknown}${STATUS}"
 }
 
+VERSION_CONTROLLER='git'
+
 __rc_prompt_vcs() {
-    if [ -d "./.git/" ]; then
+	if [ $VERSION_CONTROLLER == 'git' ]; then
 		__rc_prompt_git
-	elif [ -d "./.hg/" ]; then
+	elif [ $VERSION_CONTROLLER == 'hg' ]; then
 		__rc_prompt_hg
-	elif [ -d "./.svn/" ]; then
+	elif [ $VERSION_CONTROLLER == 'svn' ]; then
 		__rc_prompt_svn
 	fi
 }
