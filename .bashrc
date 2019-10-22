@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Set TERM
+TERM='xterm-256color'
+
 alias ls='ls --color=auto'
 
 # Cycle through all candidates
