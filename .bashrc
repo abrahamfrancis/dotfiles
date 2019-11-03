@@ -10,6 +10,8 @@ TERM='xterm-256color'
 
 alias ls='ls --color=auto'
 
+alias up='cd ..'
+
 # Cycle through all candidates
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
@@ -82,8 +84,19 @@ __rc_status() {
 	fi
 }
 
+__rc_venv() {
+	if [ -z "$VIRTUAL_ENV" ]; then
+		printf '┌'
+	else
+		printf '┌(%s)\n├' $(basename $VIRTUAL_ENV)
+	fi
+}
+
+# Disable Default Virtual Env Prompt
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # PS Strings
-PS1='\[$(tput bold)\]\[$(tput dim)\]\[$(tput setaf 6)\]┌\w\[$(tput setaf 2)\]$(__rc_prompt_vcs)$(__rc_status)\n\[$(tput setaf 6)\]├\$ \[$(tput sgr0)\]'
+PS1='\[$(tput bold)\]\[$(tput dim)\]\[$(tput setaf 6)\]$(__rc_venv)\w\[$(tput setaf 2)\]$(__rc_prompt_vcs)$(__rc_status)\n\[$(tput setaf 6)\]├\$ \[$(tput sgr0)\]'
 PS2='\[$(tput dim)\]\[$(tput setaf 6)\]├\[$(tput bold)\]> \[$(tput sgr0)\]'
 
 # Disable Duplicates in ~/.bash_history
@@ -91,3 +104,5 @@ export HISTCONTROL=ignoreboth:erasedups
 
 # Enable thefuck
 eval "$(thefuck --alias)"
+
+export PATH="~/.local/bin/:$PATH"

@@ -63,7 +63,7 @@ font-2 = "siji:size=11;1"
 
 modules-left = i3 xwindow
 modules-center = music-info music-prev music-pause music-next
-modules-right = pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = backlight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -182,6 +182,11 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
+[module/backlight]
+type = custom/script
+exec = echo "BL : $(xbacklight -get)"
+interval = 1
+
 [module/music-info]
 type = custom/script
 exec-if = "playerctl status"
@@ -241,10 +246,10 @@ bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
-bar-fill = ─
+bar-fill = #
 bar-fill-font = 2
 bar-fill-foreground = #9f78e1
-bar-empty = ─
+bar-empty = ~
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
