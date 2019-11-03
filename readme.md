@@ -1,3 +1,3 @@
 # dotfiles
 
-Configuration Files for my Arch on i3
+My Configuration Files for i3 on Arch
