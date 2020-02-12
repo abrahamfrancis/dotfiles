@@ -18,7 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #1d2021
+background = #1b191a
+;background = #1d2021
 background-alt = #3c3836
 ;foreground = ${xrdb:color7:#222}
 foreground = #bdae93

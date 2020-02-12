@@ -84,7 +84,7 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
+  # faux_multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
@@ -508,7 +508,13 @@ debug:
 #   - AppCursor
 #   - ~AppKeypad
 #   - AppKeypad
+
 key_bindings:
+  - { key: PageUp,   mods: Shift,   action: ScrollPageUp     }
+  - { key: PageDown, mods: Shift,   action: ScrollPageDown   }
+  - { key: End,      mods: Shift,   action: ScrollToBottom   }
+  - { key: Home,     mods: Shift,   action: ScrollToTop      }
+  - { key: N,        mods: Control, action: SpawnNewInstance }
   # (Windows/Linux only)
   #- { key: V,        mods: Control|Shift, action: Paste            }
   #- { key: C,        mods: Control|Shift, action: Copy             }
