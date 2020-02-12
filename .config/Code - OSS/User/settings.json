@@ -1,0 +1,34 @@
+{
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "editor.fontFamily": "'Operator Mono Book'",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 0,
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.smoothScrolling": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "files.trimTrailingWhitespace": true,
+    "debug.console.fontFamily": "Dank Mono",
+    "editor.renderWhitespace": "selection",
+    "editor.fontSize": 22,
+    "window.menuBarVisibility": "toggle",
+    "C_Cpp.enhancedColorization": "Enabled",
+    "[html]": {
+        "editor.tabSize": 2,
+    },
+    "[jinja-html]": {
+        "editor.tabSize": 2,
+    },
+    "[css]": {
+        "editor.tabSize": 2,
+    },
+    "python.analysis.logLevel": "Trace",
+    "python.analysis.memory.keepLibraryLocalVariables": true,
+    "python.analysis.memory.keepLibraryAst": true,
+    "theme-by-language.themes": {
+        "cpp": "Gruvbox Material Dark",
+        "*": "Gruvbox Dark Hard",
+        "c": "Gruvbox Material Hard Dark"
+    }
+}

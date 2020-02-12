@@ -1,3 +1,4 @@
 # dotfiles
 
-My Configuration Files for i3 on Arch
+config files I can't live without on Arch i3
+
