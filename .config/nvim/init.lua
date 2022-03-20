@@ -8,5 +8,8 @@ require "user.treesitter"
 require "user.telescope"
 require "user.nvimtree"
 require "user.comment"
+require "user.autopairs"
 require "user.gitsigns"
+require "user.lualine"
+require "user.toggleterm"
 
