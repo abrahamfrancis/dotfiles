@@ -71,6 +71,9 @@ return packer.startup(function(use)
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- syntax highlights
 
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+
   -- Comment
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "JoosepAlviste/nvim-ts-context-commentstring" -- context commenting
