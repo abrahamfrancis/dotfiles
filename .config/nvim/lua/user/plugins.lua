@@ -82,6 +82,9 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "JoosepAlviste/nvim-ts-context-commentstring" -- context commenting
 
+  -- Indentline indicator
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- Autopairs
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
