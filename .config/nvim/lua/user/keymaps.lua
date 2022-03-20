@@ -67,25 +67,3 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-
--- Telescope search
-keymap("n", "<leader>f", ":Telescope find_files<cr>", opts)
-keymap("n", "<C-f>", ":Telescope live_grep<cr>", opts)
-keymap("n", "<C-s>", ":Telescope current_buffer_fuzzy_find<cr>", opts)
-keymap("n", "<leader>o", ":Telescope buffers<cr>", opts)
-keymap("n", "<leader>p", ":Telescope oldfiles<cr>", opts)
-
--- Telescope git
-keymap("n", "<leader>vs", ":Telescope git_status<cr>", opts)
-keymap("n", "<leader>vb", ":Telescope git_branches<cr>", opts)
-keymap("n", "<leader>vc", ":Telescope git_commits<cr>", opts)
-
--- Telescope LSP
-keymap("n", "<leader>l", ":Telescope diagnostics<cr>", opts)
-keymap("n", "<leader>r", ":Telescope lsp_references<cr>", opts)
-keymap("n", "<leader>d", ":Telescope lsp_definitions<cr>", opts)
-keymap("n", "<leader>i", ":Telescope lsp_implementations<cr>", opts)
-keymap("n", "<leader>c", ":Telescope lsp_code_actions<cr>", opts)
-
