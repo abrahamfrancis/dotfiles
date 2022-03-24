@@ -47,6 +47,9 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "lewis6991/impatient.nvim" -- cache lua modules for better startup time
 
+  -- textobjects
+  use { "kana/vim-textobj-entire", requires = { "kana/vim-textobj-user" } }
+
   -- Keymaps
   use "folke/which-key.nvim"
 
