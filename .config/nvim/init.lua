@@ -16,4 +16,3 @@ require "user.autopairs"
 require "user.gitsigns"
 require "user.lualine"
 require "user.toggleterm"
-

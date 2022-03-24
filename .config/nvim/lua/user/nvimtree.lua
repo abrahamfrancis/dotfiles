@@ -28,14 +28,14 @@ vim.g.nvim_tree_group_empty = 1
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-  vim.notify("nvim-tree not found!")
+  vim.notify "nvim-tree not found!"
   return
 end
 
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then
-   vim.notify("nvim-tree.config not found!")
- return
+  vim.notify "nvim-tree.config not found!"
+  return
 end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
@@ -100,7 +100,7 @@ nvim_tree.setup {
     },
     number = false,
     relativenumber = false,
-    signcolumn = "yes"
+    signcolumn = "yes",
   },
   trash = {
     cmd = "trash",
@@ -118,4 +118,3 @@ nvim_tree.setup {
     tree_width = 30,
   },
 }
-

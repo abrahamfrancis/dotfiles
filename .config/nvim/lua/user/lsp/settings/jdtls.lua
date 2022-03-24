@@ -1,6 +1,6 @@
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 
-local home = os.getenv("HOME") .. "/"
+local home = os.getenv "HOME" .. "/"
 local install_path = home .. ".local/share/nvim/lsp_servers/jdtls/"
 
 -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
@@ -10,7 +10,7 @@ local workspace_dir = home .. ".local/share/eclipse/workspace/" .. project_name
 --                                               string concattenation in Lua
 
 local function get_root_dir()
-  local root_dir = require("jdtls.setup").find_root({".git", "mvnw", "gradlew"})
+  local root_dir = require("jdtls.setup").find_root { ".git", "mvnw", "gradlew" }
   return root_dir
 end
 
@@ -24,7 +24,7 @@ local jdtls_opts = {
 
     -- 💀
     "java", -- or "/path/to/java11_or_newer/bin/java"
-            -- depends on if `java` is in your $PATH env variable and if it points to the right version.
+    -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
@@ -33,26 +33,29 @@ local jdtls_opts = {
     "-Dlog.level=ALL",
     "-Xms1g",
     "--add-modules=ALL-SYSTEM",
-    "--add-opens", "java.base/java.util=ALL-UNNAMED",
-    "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.lang=ALL-UNNAMED",
 
     -- 💀
-    "-jar", install_path .. "plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
-         -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
-         -- Must point to the                                                     Change this to
-         -- eclipse.jdt.ls installation                                           the actual version
-
+    "-jar",
+    install_path .. "plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
+    -- Must point to the                                                     Change this to
+    -- eclipse.jdt.ls installation                                           the actual version
 
     -- 💀
-    "-configuration", install_path .. "config_linux",
-                    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
-                    -- Must point to the                      Change to one of `linux`, `win` or `mac`
-                    -- eclipse.jdt.ls installation            Depending on your system.
-
+    "-configuration",
+    install_path .. "config_linux",
+    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
+    -- Must point to the                      Change to one of `linux`, `win` or `mac`
+    -- eclipse.jdt.ls installation            Depending on your system.
 
     -- 💀
     -- See `data directory configuration` section in the README
-    "-data", workspace_dir,
+    "-data",
+    workspace_dir,
   },
 
   -- 💀
@@ -65,8 +68,8 @@ local jdtls_opts = {
   -- for a list of options
   settings = {
     java = {
-      signatureHelp = { enabled = true };
-      contentProvider = { preferred = "fernflower" };
+      signatureHelp = { enabled = true },
+      contentProvider = { preferred = "fernflower" },
       completion = {
         favoriteStaticMembers = {
           "org.hamcrest.MatcherAssert.assertThat",
@@ -75,20 +78,20 @@ local jdtls_opts = {
           "org.junit.jupiter.api.Assertions.*",
           "java.util.Objects.requireNonNull",
           "java.util.Objects.requireNonNullElse",
-          "org.mockito.Mockito.*"
-        }
-      };
+          "org.mockito.Mockito.*",
+        },
+      },
       sources = {
         organizeImports = {
-          starThreshold = 9999;
-          staticStarThreshold = 9999;
-        };
-      };
+          starThreshold = 9999,
+          staticStarThreshold = 9999,
+        },
+      },
       codeGeneration = {
         toString = {
-          template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
-        }
-      };
+          template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
+        },
+      },
       configuration = {
         runtimes = {
           {
@@ -99,13 +102,13 @@ local jdtls_opts = {
             name = "JavaSE-17",
             path = "/usr/lib/jvm/java-17-openjdk/",
           },
-        }
-      };
-    };
+        },
+      },
+    },
   },
 
   flags = {
-    server_side_fuzzy_completion = true
+    server_side_fuzzy_completion = true,
   },
 
   -- Language server `initializationOptions`
@@ -117,9 +120,8 @@ local jdtls_opts = {
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
     extendedClientCapabilities = jdtls_cap,
-    bundles = {}
+    bundles = {},
   },
 }
 
 return jdtls_opts
-

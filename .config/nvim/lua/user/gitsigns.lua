@@ -1,6 +1,6 @@
 local status_ok, gitsigns = pcall(require, "gitsigns")
 if not status_ok then
-  vim.notify("gitsigns not found!")
+  vim.notify "gitsigns not found!"
   return
 end
 
@@ -10,7 +10,12 @@ gitsigns.setup {
     change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
     delete = { hl = "GitSignsDelete", text = "契", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
     topdelete = { hl = "GitSignsDelete", text = "契", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-    changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+    changedelete = {
+      hl = "GitSignsChange",
+      text = "▎",
+      numhl = "GitSignsChangeNr",
+      linehl = "GitSignsChangeLn",
+    },
   },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -47,4 +52,3 @@ gitsigns.setup {
     enable = false,
   },
 }
-

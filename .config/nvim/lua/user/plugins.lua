@@ -26,7 +26,7 @@ vim.cmd [[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  vim.notify("packer not found!")
+  vim.notify "packer not found!"
   return
 end
 
@@ -109,4 +109,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-
