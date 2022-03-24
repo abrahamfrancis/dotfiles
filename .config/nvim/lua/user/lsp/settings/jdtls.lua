@@ -11,7 +11,6 @@ local workspace_dir = home .. ".local/share/eclipse/workspace/" .. project_name
 
 local function get_root_dir()
   local root_dir = require("jdtls.setup").find_root({".git", "mvnw", "gradlew"})
-  vim.notify("starting jdtls at " .. root_dir)
   return root_dir
 end
 
