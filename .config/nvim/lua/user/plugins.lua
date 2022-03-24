@@ -75,6 +75,9 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- auto install language servers
   use "mfussenegger/nvim-jdtls" -- advanced jdtls functions
 
+  -- Lint, Format, etc
+  use "jose-elias-alvarez/null-ls.nvim"
+
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- syntax highlights
 
