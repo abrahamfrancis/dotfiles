@@ -69,9 +69,6 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- terminal
-  use "akinsho/toggleterm.nvim"
-
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- auto install language servers
@@ -83,8 +80,12 @@ return packer.startup(function(use)
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- syntax highlights
 
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  -- Components
+  use "nvim-telescope/telescope.nvim" -- telescope
+  use "akinsho/toggleterm.nvim" -- terminal
+  use "nvim-lualine/lualine.nvim" -- status line
+  use "akinsho/bufferline.nvim" -- buffer line
+  use "moll/vim-bbye" -- better buffer close
 
   -- Comment
   use "numToStr/Comment.nvim" -- Easily comment stuff
@@ -101,9 +102,6 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-
-  -- Status Line
-  use "nvim-lualine/lualine.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
