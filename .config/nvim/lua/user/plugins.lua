@@ -73,6 +73,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- auto install language servers
   use "j-hui/fidget.nvim" -- language server progress indicator
+  use "simrat39/symbols-outline.nvim"
   use "mfussenegger/nvim-jdtls" -- advanced jdtls functions
 
   -- Lint, Format, etc
