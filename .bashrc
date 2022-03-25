@@ -120,5 +120,6 @@ cd_new_dir() {
 # Disable Duplicates in ~/.bash_history
 export HISTCONTROL=ignoreboth:erasedups
 
-export PATH="~/.local/bin/:$PATH"
+export PATH="$HOME/go/bin/:$PATH"
+export PATH="$HOME/.local/bin/:$PATH"
 
