@@ -95,11 +95,18 @@ __rc_venv() {
 	fi
 }
 
+# toolbox indicator
+__rc_toolbox() {
+	if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
+		printf "⬢"
+	fi
+}
+
 # Disable Default Virtual Env Prompt
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # PS Strings
-PS1='\[$(tput bold)\]\[$(tput dim)\]\[$(tput setaf 6)\]$(__rc_venv)\w\[$(tput setaf 2)\]$(__rc_prompt_vcs)$(__rc_status)\n\[$(tput setaf 6)\]├\$ \[$(tput sgr0)\]'
+PS1='\[$(tput bold)\]\[$(tput dim)\]\[$(tput setaf 6)\]$(__rc_venv)\w $(__rc_toolbox)\[$(tput setaf 2)\]$(__rc_prompt_vcs)$(__rc_status)\n\[$(tput setaf 6)\]├\$ \[$(tput sgr0)\]'
 PS2='\[$(tput dim)\]\[$(tput setaf 6)\]├\[$(tput bold)\]> \[$(tput sgr0)\]'
 
 # Disable Duplicates in ~/.bash_history
