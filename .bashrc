@@ -102,22 +102,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 PS1='\[$(tput bold)\]\[$(tput dim)\]\[$(tput setaf 6)\]$(__rc_venv)\w\[$(tput setaf 2)\]$(__rc_prompt_vcs)$(__rc_status)\n\[$(tput setaf 6)\]├\$ \[$(tput sgr0)\]'
 PS2='\[$(tput dim)\]\[$(tput setaf 6)\]├\[$(tput bold)\]> \[$(tput sgr0)\]'
 
-# mkdir and cd
-cd_new_dir() {
-	if [ -z $1 ]; then
-		echo "Usage : cd_new_dir DIRECTORY_NAME"
-	else
-		dir_name=$1
-		i=2
-		while [ "${!i}" != "" ]; do
-			dir_name="$dir_name ${!i}"
-			i=$(($i + 1))
-		done
-		mkdir "$dir_name"
-		cd "$dir_name"
-	fi
-}
-
 # Disable Duplicates in ~/.bash_history
 export HISTCONTROL=ignoreboth:erasedups
 
