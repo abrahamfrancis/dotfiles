@@ -80,9 +80,8 @@ __rc_status() {
 	if [ "$RETURN_VALUE" != 0 ]; then
 		cols=$(tput cols)
 		cols=$((cols - 3))
-		cols="\033[${cols}G"
 		tput setaf 1
-		printf "%s'_'" "$cols"
+    printf "\033[%dG'_'" "$cols"
 	fi
 }
 
