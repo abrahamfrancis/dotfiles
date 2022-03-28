@@ -32,7 +32,7 @@ local options = {
   wrap = false, -- display lines as one long line
   scrolloff = 8, -- is one of my fav
   sidescrolloff = 8,
-  guifont = "JetBrains Mono:17",
+  guifont = "JetBrains Mono NL:17",
 }
 
 vim.opt.shortmess:append "c"
