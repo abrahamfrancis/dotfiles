@@ -87,7 +87,6 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim" -- terminal
   use "nvim-lualine/lualine.nvim" -- status line
   use "akinsho/bufferline.nvim" -- buffer line
-  use "moll/vim-bbye" -- better buffer close
 
   -- Comment
   use "numToStr/Comment.nvim" -- Easily comment stuff
