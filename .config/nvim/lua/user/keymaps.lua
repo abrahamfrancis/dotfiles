@@ -32,12 +32,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Navigate tabs
-keymap("n", "<TAB>", ":tabnext<CR>", opts)
-keymap("n", "<S-TAB>", ":tabprevious<CR>", opts)
+keymap("n", "<TAB>", ":bnext<CR>", opts)
+keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
