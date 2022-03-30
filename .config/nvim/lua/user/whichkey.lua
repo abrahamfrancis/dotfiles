@@ -192,6 +192,10 @@ local vopts = {
 }
 local vmappings = {
   ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+  l = {
+    name = "LSP",
+    f = { "<ESC><cmd>lua vim.lsp.buf.range_formatting()<cr>", "Format" },
+  },
 }
 
 which_key.setup(setup)
