@@ -3,11 +3,14 @@
 local home = os.getenv "HOME" .. "/"
 local install_path = home .. ".local/share/nvim/lsp_servers/jdtls/"
 
--- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = home .. ".local/share/eclipse/workspace/" .. project_name
---                                               ^^
---                                               string concattenation in Lua
+local function get_workspace_dir()
+  -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
+  local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+  local workspace_dir = home .. ".local/share/eclipse/workspace/" .. project_name
+  --                                               ^^
+  --                                               string concattenation in Lua
+  return workspace_dir
+end
 
 local function get_root_dir()
   local root_dir = require("jdtls.setup").find_root { ".git", "mvnw", "gradlew" }
@@ -17,45 +20,17 @@ end
 local jdtls_cap = require("jdtls").extendedClientCapabilities
 jdtls_cap.resolveAdditionalTextEditsSupport = true
 
+local jvm_arg = "--jvm-arg="
 local jdtls_opts = {
   -- The command that starts the language server
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   cmd = {
-
-    -- 💀
-    "java", -- or "/path/to/java11_or_newer/bin/java"
-    -- depends on if `java` is in your $PATH env variable and if it points to the right version.
-
-    "-Declipse.application=org.eclipse.jdt.ls.core.id1",
-    "-Dosgi.bundles.defaultStartLevel=4",
-    "-Declipse.product=org.eclipse.jdt.ls.core.product",
-    "-Dlog.protocol=true",
-    "-Dlog.level=ALL",
-    "-Xms1g",
-    "--add-modules=ALL-SYSTEM",
-    "--add-opens",
-    "java.base/java.util=ALL-UNNAMED",
-    "--add-opens",
-    "java.base/java.lang=ALL-UNNAMED",
-
-    -- 💀
-    "-jar",
-    install_path .. "plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
-    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
-    -- Must point to the                                                     Change this to
-    -- eclipse.jdt.ls installation                                           the actual version
-
-    -- 💀
-    "-configuration",
-    install_path .. "config_linux",
-    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
-    -- Must point to the                      Change to one of `linux`, `win` or `mac`
-    -- eclipse.jdt.ls installation            Depending on your system.
-
-    -- 💀
-    -- See `data directory configuration` section in the README
-    "-data",
-    workspace_dir,
+    install_path .. "/bin/jdtls",
+    jvm_arg .. "-Dlog.protocol=true",
+    jvm_arg .. "-Dlog.level=ALL",
+    jvm_arg .. "-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
+    jvm_arg .. "-Xbootclasspath/a:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
+    jvm_arg .. "'-data " .. get_workspace_dir() .. "'",
   },
 
   -- 💀
