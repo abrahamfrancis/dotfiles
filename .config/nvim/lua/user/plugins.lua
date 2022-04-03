@@ -84,6 +84,7 @@ return packer.startup(function(use)
 
   -- Components
   use "nvim-telescope/telescope.nvim" -- telescope
+  use "nvim-telescope/telescope-ui-select.nvim"
   use "akinsho/toggleterm.nvim" -- terminal
   use "nvim-lualine/lualine.nvim" -- status line
   use "akinsho/bufferline.nvim" -- buffer line
