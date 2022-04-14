@@ -21,7 +21,6 @@ vim.g.nvim_tree_icons = {
   },
 }
 
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_highlight_opened_files = 1
 vim.g.nvim_tree_add_trailing = 1
 vim.g.nvim_tree_group_empty = 1
@@ -52,6 +51,11 @@ nvim_tree.setup {
   open_on_tab = false,
   hijack_cursor = true,
   update_cwd = true,
+  renderer = {
+    indent_markers = {
+      enable = true,
+    },
+  },
   update_to_buf_dir = {
     enable = true,
     auto_open = true,
