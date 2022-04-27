@@ -1,29 +1,29 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-vim.g.nvim_tree_icons = {
-	default = "",
-	symlink = "",
-	git = {
-		unstaged = "",
-		staged = "S",
-		unmerged = "",
-		renamed = "➜",
-		deleted = "",
-		untracked = "U",
-		ignored = "◌",
-	},
-	folder = {
-		default = "",
-		open = "",
-		empty = "",
-		empty_open = "",
-		symlink = "",
-	},
-}
-
-vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_group_empty = 1
+-- vim.g.nvim_tree_icons = {
+-- 	default = "",
+-- 	symlink = "",
+-- 	git = {
+-- 		unstaged = "",
+-- 		staged = "S",
+-- 		unmerged = "",
+-- 		renamed = "➜",
+-- 		deleted = "",
+-- 		untracked = "U",
+-- 		ignored = "◌",
+-- 	},
+-- 	folder = {
+-- 		default = "",
+-- 		open = "",
+-- 		empty = "",
+-- 		empty_open = "",
+-- 		symlink = "",
+-- 	},
+-- }
+--
+-- vim.g.nvim_tree_highlight_opened_files = 1
+-- vim.g.nvim_tree_add_trailing = 1
+-- vim.g.nvim_tree_group_empty = 1
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
