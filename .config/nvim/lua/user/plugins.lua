@@ -59,6 +59,9 @@ return packer.startup(function(use)
 	-- Theme
 	use("EdenEast/nightfox.nvim")
 
+  -- Dashboard
+  use("goolord/alpha-nvim")
+
 	-- completions
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
