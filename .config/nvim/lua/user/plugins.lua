@@ -54,7 +54,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 
 	-- Theme
-	use("folke/tokyonight.nvim")
+	use("EdenEast/nightfox.nvim")
 
 	-- completions
 	use("hrsh7th/nvim-cmp") -- The completion plugin
