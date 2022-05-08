@@ -62,6 +62,9 @@ return packer.startup(function(use)
   -- Dashboard
   use("goolord/alpha-nvim")
 
+  -- Project management
+  use("ahmedkhalf/project.nvim")
+
 	-- completions
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
