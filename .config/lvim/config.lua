@@ -15,6 +15,8 @@ lvim.colorscheme = "nordfox"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
+vim.o.guifont = "JetBrainsMonoNL Nerd Font:h14"
+
 local nightfox_ok, nightfox = pcall(require, "nightfox")
 if nightfox_ok then
   nightfox.setup({
