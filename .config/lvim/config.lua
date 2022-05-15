@@ -195,9 +195,6 @@ code_actions.setup {
   {
     name = "proselint"
   },
-  {
-    name = "gitsigns"
-  }
 }
 
 -- Additional Plugins
