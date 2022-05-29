@@ -210,11 +210,5 @@ lvim.plugins = {
   { "nvim-telescope/telescope-ui-select.nvim" },
 }
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
-lvim.autocommands.custom_groups = {
-  {
-    "BufWinEnter,BufRead,BufNewFile",
-    "*",
-    "setlocal formatoptions+=c formatoptions+=r formatoptions+=o",
-  }
-}
+-- Autocommands (https://github.com/LunarVim/LunarVim/pull/2592)
+vim.api.nvim_create_autocmd({ "BufWinEnter", "BufRead", "BufNewFile" }, { pattern = "*", command = "setlocal formatoptions+=c formatoptions+=r formatoptions+=o", })
