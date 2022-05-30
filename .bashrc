@@ -113,3 +113,8 @@ export HISTCONTROL=ignoreboth:erasedups
 
 export PATH="$HOME/go/bin/:$PATH"
 export PATH="$HOME/.local/bin/:$PATH"
+
+# If tmux exists, we're in an interactive shell and not already within tmux, run tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
