@@ -188,6 +188,9 @@ linters.setup {
   {
     name = "proselint"
   },
+  {
+    name = "vale"
+  },
 }
 
 local code_actions = require "lvim.lsp.null-ls.code_actions"
