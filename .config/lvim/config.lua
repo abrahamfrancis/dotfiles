@@ -208,7 +208,10 @@ lvim.plugins = {
   },
   { "mfussenegger/nvim-jdtls" },
   { "nvim-telescope/telescope-ui-select.nvim" },
+  { "hrsh7th/cmp-nvim-lsp-signature-help" },
 }
+
+table.insert(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
 
 -- Autocommands (https://github.com/LunarVim/LunarVim/pull/2592)
 vim.api.nvim_create_autocmd({ "BufWinEnter", "BufRead", "BufNewFile" }, { pattern = "*", command = "setlocal formatoptions+=c formatoptions+=r formatoptions+=o", })
