@@ -191,6 +191,9 @@ linters.setup {
   {
     name = "vale"
   },
+  {
+    name = "jsonlint"
+  }
 }
 
 local code_actions = require "lvim.lsp.null-ls.code_actions"
