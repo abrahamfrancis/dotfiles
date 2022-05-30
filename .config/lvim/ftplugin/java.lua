@@ -11,6 +11,15 @@ local extendedClientCapabilities = require("jdtls").extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 extendedClientCapabilities.classFileContentsSupport = true
 
+local dap_dir = home .. "/.local/share/nvim/dap_implementations"
+
+local bundles = {
+    vim.fn.glob(dap_dir .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
+};
+
+-- This is the new part
+vim.list_extend(bundles, vim.split(vim.fn.glob(dap_dir .. "/vscode-java-test/server/*.jar"), "\n"))
+
 jdtls.start_or_attach {
   on_attach = require("lvim.lsp").common_on_attach,
   -- The command that starts the language server
@@ -55,9 +64,11 @@ jdtls.start_or_attach {
   --
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
-    bundles = {},
+    bundles = bundles,
   },
 }
+
+require("jdtls").setup_dap()
 
 vim.opt_local.expandtab = true
 vim.opt_local.shiftwidth = 4
