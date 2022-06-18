@@ -4,7 +4,7 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 	color_scheme = "nightfox_wezterm",
 	window_background_opacity = 1.0,
-	font = wezterm.font("JetBrains Mono"),
+	font = wezterm.font("JetBrainsMonoNL Nerd Font"),
 	font_size = 14.0,
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 	keys = {
