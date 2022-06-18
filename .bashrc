@@ -116,5 +116,5 @@ export PATH="$HOME/.local/bin/:$PATH"
 
 # If tmux exists, we're in an interactive shell and not already within tmux, run tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+  exec tmux new-session -A -s 0
 fi
