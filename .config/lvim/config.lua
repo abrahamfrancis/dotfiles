@@ -96,7 +96,6 @@ lvim.builtin.notify.active = false
 lvim.builtin.dap.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.lualine.options.globalstatus = true
 
 lvim.builtin.telescope.extensions['ui-select'] = require("telescope.themes").get_dropdown {
