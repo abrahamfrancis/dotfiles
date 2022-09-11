@@ -121,6 +121,10 @@ lvim.builtin.treesitter.ensure_installed = "all"
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+-- temp fix for bufferline warning
+lvim.builtin.bufferline.options.indicator_icon = nil
+lvim.builtin.bufferline.options.indicator = { style = "icon", icon = "▎" }
+
 -- generic LSP settings
 
 lvim.lsp.diagnostics.virtual_text = false
